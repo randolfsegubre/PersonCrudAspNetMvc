@@ -1,0 +1,41 @@
+﻿@using ExercisePerson.Models;
+@model IEnumerable<ExercisePerson.Models.Person>
+
+@{
+    ViewBag.Title = "Persons";
+}
+<br />
+<br />
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width-device-width" />
+        <script src="./SuggestSreenName.js"></script>
+        <title>List of Person</title>
+    </head>
+    <body>
+        <h3>List of Person</h3>
+
+        <div>
+            <p>
+            </p>
+        </div>
+        <div class="row form-border">
+            <ul>
+
+                @foreach (var item in Model)
+                {
+
+                <li>@item.FirstName  @item.LastName | @item.DateOfBirth.ToString("MMMMMMMMM dd, yyyy") | @item.Email | @item.SunSign |   @item.Horo</li>
+
+                }
+            </ul>
+        </div>
+        <div>
+            <p>
+                <input type="submit" class="btn btn-info" value="Add New Person" onclick="location.href='@Url.Action("AddPerson", "Person")'" />
+            </p>
+        </div>
+    </body>
+</html>
