@@ -8,8 +8,8 @@ namespace ExercisePerson.Models
         public string get_ChineseZodiac(DateTime date)
         {
             EastAsianLunisolarCalendar cc = new ChineseLunisolarCalendar();
-            int sexagenaryYear = cc.GetSexagenaryYear(date);
-            int terrestrialBranch = cc.GetTerrestrialBranch(sexagenaryYear);
+            var sexagenarianYear = cc.GetSexagenaryYear(date);
+            var terrestrialBranch = cc.GetTerrestrialBranch(sexagenarianYear);
 
             // string[] years = "rat,ox,tiger,hare,dragon,snake,horse,sheep,monkey,fowl,dog,pig".Split(',');
             // string[] years = "Rat,Ox,Tiger,Rabbit,Dragon,Snake,Horse,Goat,Monkey,Rooster,Dog,Pig".Split(',');

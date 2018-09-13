@@ -1,18 +1,18 @@
 ﻿function permutate(form) {
-    var firstlastname = form.firstname.value.toLowerCase().trim() + ' ' + form.lastname.value.toLowerCase().trim();
+    var firstlastname = form.firstname.value.toLowerCase().trim() + " " + form.lastname.value.toLowerCase().trim();
     var namesplit = firstlastname.split(" ");
     var firstname = namesplit[0];
     var lastname = namesplit[1];
-    var domain = form..value.toLowerCase().trim();
-    var sep = form.sep.value + ' ';
+    var domain = form.domain.value.toLowerCase().trim();
+    var sep = form.sep.value + " ";
     //var sep = ", ";
 
-    if (firstname == null || firstname == "") {
+    if (firstname == null || firstname === "") {
         document.getElementById("Email").innerHTML = "Please provide a first name e.g. Luke";
         return false;
     }
     else if (lastname == null || lastname == "") {
-        document.getElementById("Email").innerHTML = "Please provide a last name e.g. Skywalker";
+        document.getElementById("Email").innerHTML = "Please provide a last name e.g. Sky-walker";
         return false;
     }
     else if (domain == null || domain == "") {
@@ -21,7 +21,7 @@
     }
     else { }
 
-    //If no optional separator, defult to comma
+    //If no optional separator, default to comma
     if (sep == null || sep == " ") {
         sep = ", ";
     }
@@ -58,7 +58,7 @@
     document.getElementById("Email").innerHTML = addresses;
 }
 
-function reset(Email) {
+function reset(email) {
     document.getElementById("Email").innerHTML = "";
     document.getElementById("FirstName").value = "";
     document.getElementById("LastName").value = "";

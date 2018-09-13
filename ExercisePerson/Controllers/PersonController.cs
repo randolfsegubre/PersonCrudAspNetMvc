@@ -7,37 +7,11 @@ namespace ExercisePerson.Controllers
 {
     public class PersonController : Controller
     {
-        private static IList<Person> PersonList = new List<Person>
-        {
-            new Person{
-                Id = 1,
-                FirstName = "Randolf",
-                LastName = "Segubre",
-                DateOfBirth = DateTime.Parse("08/28/1991"),
-                Email = "rsegubre@gmail.com",
-            },
+        private static readonly IList<Person> PersonList = new List<Person>();
 
-            new Person{
-                Id = 2,
-                FirstName = "Ganises Eva",
-                LastName = "Segubre",
-                DateOfBirth = DateTime.Parse("11/25/1991"),
-                Email = "rsegubre@gmail.com" }
-        };
 
-        public ActionResult Index()
-        {
-            //var PersonList = new List<Person>();
-            //PersonList.Add(new Person { FirstName = "Randolf" });
-            //PersonList.Add(new Person { FirstName = "Ganises Eva" });
-            return View(PersonList);
-        }
+        public ActionResult Index() => View(PersonList);
 
-        //public ActionResult AddPerson()
-        //{
-        //    return View();
-        //}
-        //[HttpPost]
         public ActionResult AddPerson(Person addPerson)
         {
             if (!ModelState.IsValid)
@@ -54,7 +28,7 @@ namespace ExercisePerson.Controllers
                 Email = addPerson.Email,
             });
 
-            return RedirectToAction("Index");
+            return RedirectToAction($"Index");
         }
     }
 }
